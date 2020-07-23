@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import './resources/images.dart';
 
 class CustomNavBar extends StatelessWidget with PreferredSizeWidget {
   @override
@@ -12,7 +13,7 @@ class CustomNavBar extends StatelessWidget with PreferredSizeWidget {
         elevation: 0.0,
         leading: IconButton(
           icon: Image.asset(
-            'assets/images/menu_logo.png',
+            Images.MENU_ICON,
             height: 30.0,
             width: 30.0,
           ),
@@ -21,14 +22,14 @@ class CustomNavBar extends StatelessWidget with PreferredSizeWidget {
         actions: <Widget>[
           new IconButton(
               icon: new Image.asset(
-                'assets/images/bell__icon.png',
+                Images.BELL_ICON,
                 height: 22.0,
                 width: 22.0,
               ),
               onPressed: () {}),
           new IconButton(
               icon: new Image.asset(
-                'assets/images/profile_logo.png',
+                Images.PROFILE_ICON,
                 height: 32.0,
                 width: 32.0,
               ),

@@ -22,17 +22,19 @@ class _HomeState extends State<Home> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: CustomNavBar(),
-      body: Container(
-        child: Column(
-          children: <Widget>[
-            PhoneNumber(),
-            DataBalanceCard(),
-            LatestPromoSection(),
-          ],
+      body: SingleChildScrollView(
+        child: Container(
+          child: Column(
+            children: <Widget>[
+              PhoneNumber(),
+              DataBalanceCard(),
+              LatestPromoSection(),
+            ],
+          ),
         ),
       ),
       bottomNavigationBar: Container(
-        height: 80.0,        
+        height: 80.0,
         child: BottomNavBar(),
       ),
     );

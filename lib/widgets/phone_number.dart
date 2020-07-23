@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:globe_app/themes/colors.dart';
+import '../resources/images.dart';
 
 class PhoneNumber extends StatelessWidget {
   @override
@@ -43,7 +44,7 @@ class PhoneNumber extends StatelessWidget {
                     ),
                     Container(
                       child: Image(
-                        image: AssetImage('assets/images/dropdown_logo.png'),
+                        image: AssetImage(Images.DROPDOWN_ICON),
                         width: 20.0,
                         height: 20.0,
                       ),
@@ -53,7 +54,7 @@ class PhoneNumber extends StatelessWidget {
               ),
               Container(
                 child: Image(
-                  image: AssetImage('assets/images/plus_icon.png'),
+                  image: AssetImage(Images.ADD_ICON),
                   width: 21.0,
                   height: 21.0,
                 ),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import './themes/colors.dart';
+import './resources/images.dart';
 
 class BottomNavBar extends StatefulWidget {
   @override
@@ -24,7 +25,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
         BottomNavigationBarItem(
           backgroundColor: AppColors.COLOR_WHITE,
           icon: new Image.asset(
-            'assets/images/mobile_icon.png',
+            Images.MOBILE_ICON,
             width: 28.0,
             height: 28.0,
           ),
@@ -53,7 +54,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
         BottomNavigationBarItem(
           backgroundColor: AppColors.COLOR_WHITE,
           icon: new Image.asset(
-            'assets/images/lifestyle_icon.png',
+            Images.LIFESTYLE_ICON,
             width: 28.0,
             height: 28.0,
           ),
@@ -82,7 +83,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
         BottomNavigationBarItem(
           backgroundColor: Colors.white,
           icon: new Image.asset(
-            'assets/images/wallet_icon.png',
+            Images.WALLET_ICON,
             width: 28.0,
             height: 28.0,
           ),
@@ -111,7 +112,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
         BottomNavigationBarItem(
           backgroundColor: Colors.white,
           icon: new Image.asset(
-            'assets/images/more_icon.png',
+            Images.MORE_ICON,
             width: 28.0,
             height: 28.0,
           ),
