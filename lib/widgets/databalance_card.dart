@@ -1,24 +1,29 @@
 import 'package:flutter/material.dart';
 import 'package:globe_app/themes/colors.dart';
+import '../resources/images.dart';
 
 class DataBalanceCard extends StatelessWidget {
   final List<Map<String, dynamic>> _databalance = [
     {
+      'image': Images.MEDIA_ICON,
       'balancetype': 'Load Balance',
       'price': 'P 1675.00',
       'validity': 'Valid till 26 Dec'
     },
     {
+      'image': Images.NETFLIX_ICON,
       'balancetype': 'Data Balance',
       'price': 'P 1075.00',
       'validity': 'Valid till 26 Nov'
     },
     {
+      'image': Images.MEDIA_ICON,
       'balancetype': 'Load Balance',
       'price': 'P 1275.00',
       'validity': 'Valid till 26 Oct'
     },
     {
+      'image': Images.NETFLIX_ICON,
       'balancetype': 'Data Balance',
       'price': 'P 1975.00',
       'validity': 'Valid till 26 Mar'
@@ -66,7 +71,7 @@ class DataBalanceCard extends StatelessWidget {
                             children: <Widget>[
                               Image(
                                 image: AssetImage(
-                                  'assets/images/media_icon.png',
+                                  _databalance[index]['image'],
                                 ),
                                 width: 21.0,
                                 height: 20.0,
