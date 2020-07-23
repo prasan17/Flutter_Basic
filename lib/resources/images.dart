@@ -22,6 +22,7 @@ class Images {
   static const FB_ICON = 'assets/images/fb_icon.png';
   static const INSTA_ICON = 'assets/images/instagram_icon.png';
   static const MEDIA_ICON = 'assets/images/media_icon.png';
+  static const NETFLIX_ICON = 'assets/images/netflix_icon.png';
 
   /* General Logo */
 

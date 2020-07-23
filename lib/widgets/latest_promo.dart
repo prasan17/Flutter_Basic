@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:globe_app/themes/colors.dart';
+import '../resources/images.dart';
 
 class LatestPromoSection extends StatelessWidget {
   final List<Map<String, dynamic>> _promos = [
     {
+      'image': Images.SPOTIFYPROMO_ICON,
+      'icon': Images.SPOTIFY_ICON,
       'promofor': 'Spotify',
       'promoversion': 'Premium',
       'promotitle': 'Subscribe for',
@@ -11,13 +14,8 @@ class LatestPromoSection extends StatelessWidget {
       'time': '/m',
     },
     {
-      'promofor': 'Instagram',
-      'promoversion': 'Surf',
-      'promotitle': 'Get pack for',
-      'price': 'P 100.00',
-      'time': '/m',
-    },
-    {
+      'image': Images.FBPROMO_ICON,
+      'icon': Images.FB_ICON,
       'promofor': 'Facebook',
       'promoversion': 'Surf',
       'promotitle': 'Get pack for',
@@ -25,6 +23,17 @@ class LatestPromoSection extends StatelessWidget {
       'time': '/m',
     },
     {
+      'image': Images.SPOTIFYPROMO_ICON,
+      'icon': Images.INSTA_ICON,
+      'promofor': 'Instagram',
+      'promoversion': 'Surf',
+      'promotitle': 'Get pack for',
+      'price': 'P 100.00',
+      'time': '/m',
+    },
+    {
+      'image': Images.FBPROMO_ICON,
+      'icon': Images.FB_ICON,
       'promofor': 'Instagram',
       'promoversion': 'Surf',
       'promotitle': 'Get pack for',
@@ -58,7 +67,7 @@ class LatestPromoSection extends StatelessWidget {
                   'View All',
                   style: TextStyle(
                       fontFamily: 'AvenirNext',
-                      fontWeight: FontWeight.w400,
+                      fontWeight: FontWeight.w600,
                       color: AppColors.COLOR_LIGHTISH_BLUE,
                       fontSize: 13.0),
                 ),
@@ -78,55 +87,105 @@ class LatestPromoSection extends StatelessWidget {
                     ),
                     child: Container(
                       width: 140.0,
-                      color: AppColors.COLOR_LAVENDER_PINK,
-                      // decoration: BoxDecoration(
-                      //     image: DecorationImage(
-                      //   image: AssetImage('assets/images/promo_fb--icon.png'),
-                      //   fit: BoxFit.cover,
-                      // )),
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(12.0),
+                          image: DecorationImage(
+                            image: AssetImage(_promos[index]['image']),
+                            fit: BoxFit.cover,
+                          ),
+                          color: AppColors.COLOR_WHITE),
                       child: Container(
+                        padding: EdgeInsets.fromLTRB(0.0, 24.0, 0.0, 0.0),
                         child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
                           children: <Widget>[
                             Expanded(
                               flex: 3,
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: <Widget>[
-                                  // Image(
-                                  //   image: AssetImage(
-                                  //     'assets/images/spotify__logo.png',
-                                  //   ),
-                                  //   width: 18.0,
-                                  //   height: 18.0,
-                                  // ),
-                                  RichText(
-                                    text: TextSpan(
-                                        text: '${_promos[index]['promofor']} ',
-                                        style: TextStyle(
-                                            color: AppColors.COLOR_WHITE,
-                                            fontSize: 14.0,
-                                            fontWeight: FontWeight.w700,
-                                            fontFamily: 'AvenirNext'),
-                                        children: <TextSpan>[
-                                          TextSpan(
-                                              text: _promos[index]
-                                                  ['promoversion'],
-                                              style: TextStyle(
-                                                  color: AppColors.COLOR_WHITE,
-                                                  fontSize: 14.0,
-                                                  fontWeight: FontWeight.w400,
-                                                  fontFamily: 'AvenirNext'))
-                                        ]),
-                                  )
-                                ],
+                              child: Padding(
+                                padding:
+                                    EdgeInsets.fromLTRB(16.0, 0.0, 10.0, 0.0),
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: <Widget>[
+                                    Image(
+                                      image: AssetImage(
+                                        _promos[index]['icon'],
+                                      ),
+                                      width: 18.0,
+                                      height: 18.0,
+                                    ),
+                                    SizedBox(
+                                      height: 15,
+                                    ),
+                                    RichText(
+                                      text: TextSpan(
+                                          text:
+                                              '${_promos[index]['promofor']} ',
+                                          style: TextStyle(
+                                              color: AppColors.COLOR_WHITE,
+                                              fontSize: 14.0,
+                                              fontWeight: FontWeight.w700,
+                                              fontFamily: 'AvenirNext'),
+                                          children: <TextSpan>[
+                                            TextSpan(
+                                                text: _promos[index]
+                                                    ['promoversion'],
+                                                style: TextStyle(
+                                                    color:
+                                                        AppColors.COLOR_WHITE,
+                                                    fontSize: 14.0,
+                                                    fontWeight: FontWeight.w400,
+                                                    fontFamily: 'AvenirNext'))
+                                          ]),
+                                    )
+                                  ],
+                                ),
                               ),
                             ),
                             Expanded(
-                              flex: 2,
-                              child: Column(
-                                children: <Widget>[],
-                              ),
-                            )
+                                flex: 2,
+                                child: Container(
+                                  width: double.infinity,
+                                  padding: EdgeInsets.fromLTRB(
+                                      16.0, 14.0, 10.0, 0.0),
+                                  decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(12.0),
+                                      color: Color.fromRGBO(0, 0, 0, 0.4)),
+                                  child: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: <Widget>[
+                                      Text(
+                                        _promos[index]['promotitle'],
+                                        style: TextStyle(
+                                            color: AppColors.COLOR_WHITE,
+                                            fontSize: 14.0,
+                                            fontWeight: FontWeight.w500,
+                                            fontFamily: 'AvenirNext'),
+                                      ),
+                                      RichText(
+                                        text: TextSpan(
+                                            text: '${_promos[index]['price']} ',
+                                            style: TextStyle(
+                                                color: AppColors.COLOR_WHITE,
+                                                fontSize: 14.0,
+                                                fontWeight: FontWeight.w700,
+                                                fontFamily: 'AvenirNext'),
+                                            children: <TextSpan>[
+                                              TextSpan(
+                                                  text: _promos[index]['time'],
+                                                  style: TextStyle(
+                                                      color:
+                                                          AppColors.COLOR_WHITE,
+                                                      fontSize: 10.0,
+                                                      fontWeight:
+                                                          FontWeight.w400,
+                                                      fontFamily: 'AvenirNext'))
+                                            ]),
+                                      )
+                                    ],
+                                  ),
+                                ))
                           ],
                         ),
                       ),
